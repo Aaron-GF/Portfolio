@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 100px;
+    padding: 20px;
+}
+
+/* Sección principal */
+#me {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+#profile {
+    mask-image: linear-gradient(to bottom, black 50%, transparent),
+                linear-gradient(to left, black 80%, transparent);
+    mask-composite: intersect;
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent),
+                        linear-gradient(to left, black 80%, transparent);
+    -webkit-mask-composite: intersect;
+}
+
+#me > div {
+    flex: 1;
+    text-align: left;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ccc;
+}
+
+/* Iconos sociales */
+.social-icons {
+    margin-top: 1.25rem;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons li {
+    display: inline-block;
+}
+
+.social-icons a {
+    margin: 0.625rem;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-size: 1.25rem;
+    color: var(--color, #fff);
+    background-color: #444;
+}
+
+.social-icons a:hover {
+    background: var(--color, #0077b5);
+    color: #0D0D0D;
+    box-shadow: 0 0 0.3125rem var(--color, #0077b5), 
+                0 0 1.5625rem var(--color, #0077b5), 
+                0 0 3.125rem var(--color, #0077b5), 
+                0 0 4.6875rem var(--color, #0077b5);
+}
+
+/* Sección "Sobre mí" */
+#about {
+    max-width: 800px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#about p {
+    font-size: 1.125rem;
+    color: #ddd;
+}
+
+/* Sección "Tecnologías" */
+#tecnologies {
+    max-width: 800px;
+    text-align: left;
+}
+
+#tecnologies h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#tecnologies h3 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: #ccc;
+}
+
+#tecnologies ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#tecnologies ul li {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+#tecnologies ul li::before {
+    content: "•";
+    color: #0077b5;
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+}
