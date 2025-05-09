@@ -1,0 +1,15 @@
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Node.js 
+node_modules/
+dist/
+build/
+
+# Sensitive files
+.env
