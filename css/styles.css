@@ -4,39 +4,49 @@
     padding: 0;
 }
 
-/* Estilos generales */
+/* Global styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #333;
-    color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    background-color: #081b29;
+    color: #ededed;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 100px;
     padding: 20px;
+    letter-spacing: 0.05px;
 }
 
-/* Sección principal */
+/* Main section */
 #me {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 50px;
-    width: 100%;
-    max-width: 1200px;
+    gap: 100px;
 }
 
 #profile {
     mask-image: linear-gradient(to bottom, black 50%, transparent),
-                linear-gradient(to left, black 80%, transparent);
+        linear-gradient(to left, black 80%, transparent);
     mask-composite: intersect;
     -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent),
-                        linear-gradient(to left, black 80%, transparent);
+        linear-gradient(to left, black 80%, transparent);
     -webkit-mask-composite: intersect;
+    animation: fadeIn 2.5s linear forwards;
 }
 
-#me > div {
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}
+
+#me>div {
     flex: 1;
     text-align: left;
 }
@@ -49,50 +59,100 @@ h1 {
 h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #ccc;
+    color: #00abf0;
 }
 
-/* Iconos sociales */
-.social-icons {
-    margin-top: 1.25rem;
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 15px;
-}
-
-.social-icons li {
+#animation {
+    position: relative;
     display: inline-block;
+    color: transparent;
 }
 
-.social-icons a {
-    margin: 0.625rem;
-    border-radius: 50%;
-    width: 2.5rem;
-    height: 2.5rem;
+#animation::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    border-right: 2px solid #00abf0;
+    color: #00abf0;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: fill-text 3s steps(30) forwards 3s, blink 0.7s step-end infinite;
+}
+
+@keyframes fill-text {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        border-color: #00abf0;
+    }
+
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* social icons */
+
+#social-icons {
+    bottom: 40px;
+    width: 170px;
     display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+#social-icons a {
+    position: relative;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
     text-decoration: none;
-    transition: 0.3s ease;
-    font-size: 1.25rem;
-    color: var(--color, #fff);
-    background-color: #444;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
 }
 
-.social-icons a:hover {
-    background: var(--color, #0077b5);
-    color: #0D0D0D;
-    box-shadow: 0 0 0.3125rem var(--color, #0077b5), 
-                0 0 1.5625rem var(--color, #0077b5), 
-                0 0 3.125rem var(--color, #0077b5), 
-                0 0 4.6875rem var(--color, #0077b5);
+#social-icons a:hover {
+    color: #081b29;
+    box-shadow: 0 0 10px #00abf0, 0 0 20px rgba(0, 171, 240, 0.3)
 }
 
-/* Sección "Sobre mí" */
+#social-icons a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #00abf0;
+    z-index: -1;
+    transition: .5s;
+}
+
+#social-icons a:hover::before {
+    width: 100%;
+}
+
+/* Section about me */
 #about {
     max-width: 800px;
-    text-align: center;
     line-height: 1.6;
 }
 
@@ -106,7 +166,7 @@ h2 {
     color: #ddd;
 }
 
-/* Sección "Tecnologías" */
+/* Section tecnologies */
 #tecnologies {
     max-width: 800px;
     text-align: left;
