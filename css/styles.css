@@ -104,11 +104,11 @@ h2 {
 /* social icons */
 
 #social-icons {
-    bottom: 40px;
-    width: 170px;
-    display: flex;
-    justify-content: space-between;
+   display: flex;
+    align-items: center;
+    gap: 15px;
     margin-top: 50px;
+    transition: gap 0.3s ease;
 }
 
 #social-icons a {
@@ -150,14 +150,76 @@ h2 {
     width: 100%;
 }
 
+/* styles for email popup */
+.email-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.email-popup {
+    display: inline-flex;
+    align-items: center;
+    background-color: #00abf0;
+    color: #081b29;
+    padding: 8px 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-left: 10px;
+    opacity: 0;
+    transform: translateX(-10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.email-container.active .email-popup {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.email-popup button {
+    margin-left: 10px;
+    background-color: #081b29;
+    color: #00abf0;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.email-popup button:hover {
+    background-color: #00acf032;
+    color: #081b29;
+    border: 1px solid #081b29;
+}
+
+#email-icon {
+    cursor: pointer;
+}
+
+.other-icons {
+    display: flex;
+    gap: 15px;
+    transition: transform 0.3s ease;
+}
+
+.email-container.active + .other-icons {
+    transform: translateX(170px); 
+}
+
 /* Section about me */
 #about {
-    max-width: 800px;
     line-height: 1.6;
 }
 
+#about div.container {
+    width: 70%;
+    margin: 0 auto;
+}
+
 #about h2 {
-    font-size: 2rem;
     margin-bottom: 1rem;
 }
 
@@ -167,41 +229,59 @@ h2 {
 }
 
 /* Section tecnologies */
-#tecnologies {
-    max-width: 800px;
-    text-align: left;
+
+#technologies {
+    align-items: space-between;
 }
 
-#tecnologies h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.tech-title {
+    padding-bottom: 2rem;
+    text-align: center;
 }
 
-#tecnologies h3 {
-    font-size: 1.5rem;
+.technologies .container {
+    background: #00acf032;
+    color: #00abf0;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 70%;
+    margin: 2rem auto 0 auto;
+    min-width: 100%;
+}
+
+.technologies .container .row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    flex-wrap: wrap;
+    gap: 1.8rem;
+}
+
+.technologies .container .bar {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 1rem;
+    background: #081b29;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.technologies .container .bar:hover {
+    box-shadow: 0 4px 10px #00abf0;
+    transform: scale(1.03); 
+}
+
+.technologies .container .bar .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
     margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    color: #ccc;
 }
 
-#tecnologies ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.technologies .container .bar .info span {
+    font-weight: 500;
+    margin-left: 0.5rem;
 }
 
-#tecnologies ul li {
-    font-size: 1.125rem;
-    margin-bottom: 0.5rem;
-    padding-left: 1rem;
-    position: relative;
-}
+/* Section projects */
 
-#tecnologies ul li::before {
-    content: "•";
-    color: #0077b5;
-    position: absolute;
-    left: 0;
-    font-size: 1.5rem;
-    line-height: 1;
-}

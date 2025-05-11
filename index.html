@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -18,7 +18,13 @@
             <h1>Aarón García Fernández</h1>
             <h2 id="animation" data-text="Desarrollador Web Frontend">Desarrollador Web Frontend</h2>
             <div id="social-icons">
-                <a href=""><i class='bx bx-envelope'></i></a>
+                <div class="email-container">
+                    <a id="email-icon"><i class='bx bx-envelope'></i></a>
+                    <div id="email-popup" class="email-popup">
+                        <span id="email">aarongarcia567@gmail.com</span>
+                        <button id="copy-btn"><i class='bx bxs-copy'></i></button>
+                    </div>
+                </div class="other-icons">
                 <a href="https://github.com/Aaron-GF" target="_blank"><i class='bx bxl-github'></i></a>
                 <a href="https://www.linkedin.com/in/aar%C3%B3n-garc%C3%ADa-fern%C3%A1ndez-6a28b5314/"
                     target="_blank"><i class='bx bxl-linkedin'></i></a>
@@ -26,24 +32,66 @@
         </div>
     </div>
     <section id="about">
-        <h2>Sobre mí</h2>
-        <p>Hola, soy Aarón García Fernández, un apasionado del desarrollo web y la tecnología. Me encanta aprender y
-            enfrentar nuevos desafíos en el mundo digital.</p>
+        <div class="container">
+            <h2>Sobre mí</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eius dolores dignissimos blanditiis
+                dolorum natus nobis dolorem laboriosam, rem eum deleniti voluptates quidem quos, recusandae saepe earum.
+                Quo, dolores dolor.</p>
+        </div>
     </section>
-    <section id="tecnologies">
-        <h2>Tecnologías</h2>
-        <h3>Frontend</h3>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-        </ul>
-        <h3>Herramientas</h3>
-        <ul>
-            <li>Git</li>
-            <li>GitHub</li>
-            <li>Visual Studio Code</li>
-        </ul>
+    <section id="technologies" class="technologies">
+        <h2 class="heading">Tecnologías</h2>
+        <div class="container">
+            <h3 class="tech-title">Frontend</h3>
+            <div class="row" id="frontend">
+                <div class="bar">
+                    <div class="info">
+                        <img src="./assets/icons/html.png" alt="html icon" width="50" height="50">
+                        <span>HTML</span>
+                    </div>
+                </div>
+                <div class="bar">
+                    <div class="info">
+                        <img src="./assets/icons/text.png" alt="css icon" width="50" height="50">
+                        <span>CSS</span>
+                    </div>
+                </div>
+                <div class="bar">
+                    <div class="info">
+                        <img src="./assets/icons/js.png" alt="JavaScript icon" width="50" height="50">
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <h3 class="tech-title">Herramientas</h3>
+            <div class="row" id="tools">
+                <div class="bar">
+                    <div class="info">
+                        <img src="./assets/icons/vscode.png" alt="vs code icon" width="50" height="50">
+                        <span>VS Code</span>
+                    </div>
+                </div>
+                <div class="bar">
+                    <div class="info">
+                        <img src="./assets/icons/social.png" alt="git icon" width="50" height="50">
+                        <span>Git</span>
+                    </div>
+                </div>
+                <div class="bar">
+                    <div class="info">
+                        <img src="./assets/icons/github.png" alt="github icon" width="50" height="50">
+                        <span>Github</span>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+    <section id="projects">
+        <h2>Proyectos</h2>
     </section>
 
 </body>
