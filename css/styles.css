@@ -104,11 +104,10 @@ h2 {
 /* social icons */
 
 #social-icons {
-   display: flex;
+    display: flex;
     align-items: center;
     gap: 15px;
     margin-top: 50px;
-    transition: gap 0.3s ease;
 }
 
 #social-icons a {
@@ -150,63 +149,66 @@ h2 {
     width: 100%;
 }
 
-/* styles for email popup */
-.email-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.email-popup {
-    display: inline-flex;
-    align-items: center;
-    background-color: #00abf0;
-    color: #081b29;
-    padding: 8px 12px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    margin-left: 10px;
-    opacity: 0;
-    transform: translateX(-10px);
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.email-container.active .email-popup {
-    opacity: 1;
-    transform: translateX(0);
-    pointer-events: auto;
-}
-
-.email-popup button {
-    margin-left: 10px;
-    background-color: #081b29;
-    color: #00abf0;
-    border: none;
-    padding: 4px 8px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.85rem;
-}
-
-.email-popup button:hover {
-    background-color: #00acf032;
-    color: #081b29;
-    border: 1px solid #081b29;
-}
-
 #email-icon {
     cursor: pointer;
 }
 
-.other-icons {
-    display: flex;
-    gap: 15px;
-    transition: transform 0.3s ease;
+#email {
+    display: none;
+    background: #00acf032;
+    padding: 10px;
+    gap: 20px;
+    border-radius: 10px;
+    color: #00abf0;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.email-container.active + .other-icons {
-    transform: translateX(170px); 
+#copy-btn {
+    cursor: pointer;
+    transition: 0.5s ease;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+#copy-btn:hover {
+    background: #00abf0;
+    color: #081b29;
+}
+
+#copied {
+    display: none;
+    padding: 5px;
+    border: 8px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    padding: 5px;
+    background-color: #aae1f7;
+    color: #081b29;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 10;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: 0.5 ease;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 0.6;
+    transition-delay: 1s;
 }
 
 /* Section about me */
@@ -267,7 +269,7 @@ h2 {
 
 .technologies .container .bar:hover {
     box-shadow: 0 4px 10px #00abf0;
-    transform: scale(1.03); 
+    transform: scale(1.03);
 }
 
 .technologies .container .bar .info {
@@ -284,4 +286,3 @@ h2 {
 }
 
 /* Section projects */
-

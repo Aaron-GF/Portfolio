@@ -1,18 +1,33 @@
-const emailIcon = document.getElementById("email-icon");
-const emailContainer = document.querySelector(".email-container");
+const emailIcon = document.getElementById('email-icon');
+const email = document.getElementById('email');
+const copyBtn = document.getElementById('copy-btn');
+const copied = document.getElementById('copied');
+const copyMsg = document.querySelector('.tooltip-text')
 
-emailIcon.addEventListener("click", () => {
-    emailContainer.classList.toggle("active");
-});
-
-document.addEventListener("click", (e) => {
-    if (!emailContainer.contains(e.target)) {
-        emailContainer.classList.remove("active");
+emailIcon.addEventListener('click', () => {
+    if(email.style.display === 'none' || email.style.display === '') {
+        email.style.display = 'flex';
+        emailIcon.style.background =' #00abf0';
+        emailIcon.style.color = '#081b29';
+        emailIcon.style.boxShadow = '0 0 10px #00abf0, 0 0 20px rgba(0, 171, 240, 0.3)';
+    } else {
+        email.style.display = 'none';
+        emailIcon.style.background ='';
+        emailIcon.style.color = '';
+        emailIcon.style.boxShadow = '';
     }
 });
 
-document.getElementById("copy-btn").addEventListener("click", () => {
-  const email = document.getElementById("email").textContent;
-  navigator.clipboard.writeText(email);
-  alert("Correo copiado al portapapeles");
-});
+copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText('aarongarcia567@gmail.com')
+    .then(() => {
+        copied.style.display = 'block';
+        copyBtn.style.display = 'none';
+        copyMsg.style.display = 'none';
+        setTimeout(() => {
+            copied.style.display = 'none'
+            copyBtn.style.display = 'block'
+            copyMsg.style.display = 'inline-block'
+        }, 5000)
+    })
+})
