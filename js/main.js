@@ -1,3 +1,4 @@
+// email icon display and copy function
 const emailIcon = document.getElementById('email-icon');
 const email = document.getElementById('email');
 const copyBtn = document.getElementById('copy-btn');
@@ -30,4 +31,13 @@ copyBtn.addEventListener('click', () => {
             copyMsg.style.display = 'inline-block'
         }, 5000)
     })
+})
+
+// Reset form after submit
+const form = document.getElementById('contactForm');
+
+form.addEventListener('submit', e => {
+    setTimeout(() => {
+        form.reset();
+    }, 100);
 })

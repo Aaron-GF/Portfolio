@@ -23,13 +23,13 @@
                     <span>aarongarcia567@gmail.com</span>
                     <div class="tooltip">
                         <i id="copy-btn" class='bx bx-copy'></i>
-                        <i id="copied" class="bx bx-check-double"></i> 
+                        <i id="copied" class="bx bx-check-double"></i>
                         <span class="tooltip-text">Copiar</span>
                     </div>
                 </div>
                 <a href="https://github.com/Aaron-GF" target="_blank"><i class='bx bxl-github'></i></a>
-                <a href="https://www.linkedin.com/in/aar%C3%B3n-garc%C3%ADa-fern%C3%A1ndez-6a28b5314/"
-                    target="_blank"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://linkedin.com/in/aarón-garcía-fernández" target="_blank"><i
+                        class='bx bxl-linkedin'></i></a>
             </div>
         </div>
     </div>
@@ -94,6 +94,35 @@
     </section>
     <section id="projects">
         <h2>Proyectos</h2>
+    </section>
+
+    <section id="contact">
+        <div class="container-contact">
+            <div class="contactForm">
+                <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="c57c4239-3505-4f8b-886c-aa93381ae806">
+                    <input type="hidden" name="subject" value="📬 Mensaje nuevo desde el portfolio">
+                    <input type="hidden" name="redirect" value="#contact">
+                    <h2>Contacto</h2>
+                    <div class="inputBox">
+                        <input type="text" name="name" required>
+                        <span>Nombre</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="email" required>
+                        <span>Correo electrónico</span>
+                    </div>
+                    <div class="inputBox">
+                        <textarea name="message" required></textarea>
+                        <span>Escribe tu mensaje...</span>
+                    </div>
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    <div class="inputBox">
+                        <input type="submit" value="Enviar">
+                    </div>
+                </form>
+            </div>
+        </div>
     </section>
 
 </body>
