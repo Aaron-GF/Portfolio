@@ -1,4 +1,4 @@
-// email icon display and copy function ////////////
+// email icon display and copy function ///////////////////////////////////
 const emailIcon = document.getElementById('email-icon');
 const email = document.getElementById('email');
 const copyBtn = document.getElementById('copy-btn');
@@ -33,7 +33,7 @@ copyBtn.addEventListener('click', () => {
     })
 })
 
-// Reset form after submit ////////
+// Reset form after submit ///////////////////////////////////
 const form = document.getElementById('contactForm');
 
 form.addEventListener('submit', e => {
@@ -42,22 +42,36 @@ form.addEventListener('submit', e => {
     }, 100);
 })
 
-// active menu ///////
+// active menu ////////////////////////////////////
 const menuLi = document.querySelectorAll('header ul li a');
 const section = document.querySelectorAll('section');
 
 const activeMenu = () => {
     let len = section.length;
     while(--len && window.scrollY + 97 < section[len].offsetTop) {}
-    menuLi.forEach(sec => sec.classList.remove("active"));
-    menuLi[len].classList.add("active");
+    menuLi.forEach(sec => sec.classList.remove('active'));
+    menuLi[len].classList.add('active');
 };
 
 activeMenu();
 window.addEventListener("scroll", activeMenu);
 
-// sticky navbar ///////////////
-const header = document.querySelector("header");
-window.addEventListener("scroll", () => {
-   header.classList.toggle("sticky", window.scrollY > 50) 
+// sticky navbar ///////////////////////////////////
+const header = document.querySelector('header');
+window.addEventListener('scroll', () => {
+   header.classList.toggle('sticky', window.scrollY > 50) 
 })
+
+// icon navbar ///////////////////////////////////
+const menuIcon = document.getElementById('menu-icon');
+const navlist = document.querySelector('.navlist');
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navlist.classList.toggle('open');
+}
+
+window.onscroll = () => {
+    menuIcon.classList.remove('bx-x');
+    navlist.classList.remove('open');
+}

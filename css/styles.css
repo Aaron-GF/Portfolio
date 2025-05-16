@@ -276,7 +276,7 @@ h2 {
 
 #copy-btn:hover {
     background: var(--main-color);
-    color: #081b29;
+    color: var(--bg-color);
 }
 
 #copied {
@@ -303,9 +303,9 @@ h2 {
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-    font-size: 0.8rem;
+    font-size: .8rem;
     font-weight: bold;
-    transition: 0.5 ease;
+    transition: all .5s ease;
 }
 
 .tooltip:hover .tooltip-text {
@@ -468,15 +468,15 @@ h2 {
     color: var(--bg-color);
 }
 
-/* Section contact */
+/* Contact section */
 
 #contact {
     position: relative;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 100%;
 }
 
 .container-contact h2 {
@@ -487,10 +487,9 @@ h2 {
     position: relative;
     background: repeating-conic-gradient(from var(--a), var(--main-color) 0%, var(--main-color) 10%, transparent 10%, transparent 50%);
     animation: animate 10s linear infinite;
-    padding: 80px 100px;
+    padding: 4rem 5rem;
     border-radius: 20px;
-    width: 450px;
-    height: 500px;
+    min-width: 35rem;
 }
 
 .container-contact .contactForm::before {
@@ -531,20 +530,21 @@ h2 {
 .container-contact .contactForm form {
     position: relative;
     z-index: 10;
+    margin: 1rem auto;
+    margin-bottom: 3rem;
 }
 
 .container-contact .contactForm form .inputBox {
     position: relative;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 
 .container-contact .contactForm form .inputBox input,
 .container-contact .contactForm form .inputBox textarea {
     width: 100%;
-    padding: 8px 0;
-    font-size: 0.9em;
-    margin: 10px 0;
+    padding: .7rem;
+    margin-bottom: .8rem;
     border: none;
     background: transparent;
     border-bottom: 2px solid var(--main-color);
@@ -595,25 +595,6 @@ input[type="submit"]:active {
     box-shadow: none;
 }
 
-@media (max-width: 991px) {
-    #contact {
-        padding: 50px;
-    }
-
-    .container-contact {
-        flex-direction: column;
-    }
-
-    .container-contact .contactForm {
-        width: 100%;
-        padding: 30px
-    }
-
-    .container-contact .contactForm form {
-        padding: 10px;
-    }
-}
-
 /* footer */
 footer {
     padding: 2.5rem 10%;
@@ -644,4 +625,81 @@ footer a {
 footer a:hover {
     box-shadow: var(--neon-box-shadow);
     transform: scale(1.1);
+}
+
+/* Responsive design */
+@media(max-width: 991px) {
+    header,
+    header.sticky {
+        padding: 15px 5%;
+    }
+    footer {
+        padding: 15px 5%;
+    }
+    section {
+        padding: 50px 5%;
+    }
+    .navlist a {
+        padding: 8px 15px;
+    }
+    #me {
+        margin-top: 5rem;
+    }
+    .social-icons {
+        margin-top: 2rem;
+    }
+}
+
+@media(max-width: 768px) {
+    #menu-icon {
+        display: block;
+        transition: all .4s ease;
+    }
+    #menu-icon.bx-x {
+        transform: rotate(-180deg);
+    }
+    .navlist {
+        display: flex;
+        position: absolute;
+        top: -500px;
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        background: var(--bg-color);
+        text-align: left;
+        padding: 0 5%;
+        transition: all 1s ease;
+    }
+    .navlist a {
+        display: block;
+        padding-bottom: 1rem;
+        font-size: 1rem;
+    }
+    .navlist.open {
+        top: 100%;
+    }
+    #me {
+        grid-template-columns: 1fr;
+    }
+    #profile {
+        width: 80%;
+        left: 10%;
+        top: 13%;
+    }
+    #technologies {
+        grid-template-columns: 1fr;
+    }
+    .container-contact .contactForm {
+        min-width: 30rem;
+        padding: 2rem 3rem;
+    }
+}
+
+@media(max-width: 420px) {
+    html {
+        font-size: 80%;
+    }
+    .container-contact .contactForm {
+        min-width: 25rem;
+    }
 }
