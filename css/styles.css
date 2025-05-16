@@ -35,12 +35,6 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
     color: var(--white);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 100px;
-    letter-spacing: 0.05px;
 }
 
 section {
@@ -330,10 +324,6 @@ h2 {
 
 /* Section tecnologies */
 
-#technologies {
-    align-items: space-between;
-}
-
 .tech-title {
     padding-bottom: 2rem;
     text-align: center;
@@ -342,11 +332,14 @@ h2 {
 .technologies .container {
     background: var(--bg2-color);
     color: var(--main-color);
-    border-radius: 1rem;
+    border-radius: 15px;
     padding: 2rem;
-    width: 70%;
     margin: 2rem auto 0 auto;
-    min-width: 100%;
+    width: 100%;
+}
+
+.bar img {
+    width: 3rem;
 }
 
 .technologies .container .row {
@@ -357,14 +350,19 @@ h2 {
 }
 
 .technologies .container .bar {
-    margin-bottom: 15px;
+    width: 8rem;
+    margin-bottom: 1rem 0;
     padding: 10px;
-    border-radius: 1rem;
+    border-radius: 15px;
     background: var(--bg-color);
-    transition: 0.3s ease;
+    transition: all .3s ease;
     cursor: pointer;
     transform-origin: center center;
     will-change: transform;
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .technologies .container .bar:hover {
@@ -372,17 +370,9 @@ h2 {
     transform: scale(1.03);
 }
 
-.technologies .container .bar .info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.technologies .container .bar .info span {
+.technologies .container .bar span {
     font-weight: 500;
-    margin-left: 0.5rem;
+    margin-left: .5rem;
 }
 
 /* Section projects */
@@ -647,6 +637,9 @@ footer a:hover {
     }
     .social-icons {
         margin-top: 2rem;
+    }
+    .container-contact .contactForm::before {
+        filter: blur(10px);
     }
 }
 
