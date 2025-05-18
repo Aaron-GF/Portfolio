@@ -122,24 +122,46 @@ header.sticky {
 }
 
 #profile {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#profile img {
     mask-image: linear-gradient(to bottom, black 100%, transparent),
         linear-gradient(to left, black 80%, transparent);
     mask-composite: intersect;
     -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent),
         linear-gradient(to left, black 80%, transparent);
     -webkit-mask-composite: intersect; 
-    animation: fadeIn 2.5s linear forwards;
-    margin: auto;
+    width: 300px; 
+    height: 320px;
+    opacity: .6;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
+#profile::after {
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-bottom: 7px solid var(--main-color);
+    border-left: 7px solid var(--main-color);
+    bottom: -50px;
+    left: 130px;
+    filter: blur(2px);
+    border-radius: 5px;
+ }
 
-    100% {
-        opacity: 0.6;
-    }
+#profile::before {
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-top: 7px solid var(--main-color);
+    border-right: 7px solid var(--main-color);
+    right: 180px;
+    filter: blur(2px);
+    border-radius: 5px;
 }
 
 #me>div {
@@ -404,7 +426,7 @@ h2 {
 
 .port-image img {
     width: 100%;
-    opacity: .5s;
+    opacity: .5;
     height: 100%;
     transition: .5s;
 }
@@ -444,14 +466,19 @@ h2 {
     margin: 5px 0 15px 0;
 }
 
+.links {
+    display: flex;
+    gap: 2rem;
+}
+
 .port-content a {
     background: var(--white);
     border-radius: 50%;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border: 1px solid var(--main-color);
     outline: 2px solid var(--white);
     font-size: 1.3rem;
@@ -617,6 +644,24 @@ footer a:hover {
     transform: scale(1.1);
 }
 
+/* Scroll animations */
+.scroll-scale {
+    opacity: 0;
+    transform: scale(.9);
+    transition: all 2s;
+}
+
+.scroll-bottom {
+    opacity: 0;
+    transform: translateY(300px);
+    transition: 3s;
+}
+
+.show-items {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 /* Responsive design */
 @media(max-width: 991px) {
     header,
@@ -639,7 +684,8 @@ footer a:hover {
         margin-top: 2rem;
     }
     .container-contact .contactForm::before {
-        filter: blur(10px);
+        filter: none;
+        animation-delay: 2.5s;
     }
 }
 
