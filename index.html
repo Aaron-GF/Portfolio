@@ -9,6 +9,7 @@
     <script src="./js/main.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preload" as="image" href="./assets/images/me.webp">
 </head>
 
 <body>
@@ -29,7 +30,7 @@
     <section id="main">
         <div id="me" class="scroll-scale">
             <div id="profile">
-                <div class="corners"><img src="./assets/images/me.png" alt="Foto de perfil"></div>
+                <div class="corners"><img src="./assets/images/me.webp" alt="Foto de perfil"></div>
             </div>
             <div id="rol">
                 <h1>Aarón García Fernández</h1>
@@ -58,13 +59,16 @@
         <div class="scroll-scale">
             <h2>Sobre mí</h2>
             <p>Mi nombre es Aarón, soy una persona curiosa y autodidacta, he decidido dar un giro en mi camino laboral
-                hacia el desarrollo web ya que sentía que lo que hacía antes no me motivaba y necesitaba encontrar algo que realmente si lo hiciera. Lo que he ido aprendiendo es a base de cursos, práctica, prueba y error.</p>
+                hacia el desarrollo web ya que sentía que lo que hacía antes no me motivaba y necesitaba encontrar algo
+                que realmente si lo hiciera. Lo que he ido aprendiendo es a base de cursos, práctica, prueba y error.
+                Voy a dejar un enlace a mi perfil de linkedin en el que iré subiendo los cursos y certificados que vaya
+                consiguiendo.</p>
             <br>
             <p>El propósito de esta web es que sea el reflejo de lo que voy aprendiendo y una forma de poder mostrar mis
                 proyectos. Lo actualizaré a medida que avanzo, sobre todo en la sección de proyectos, donde
                 iré subiendo lo que vaya creando.</p><br>
             <p>Este portfolio se ha realizado unicamente con HTML, CSS y JavaScript. El diseño es responsivo y se adapta
-                a cualquier tipo de pantalla.</p><br>
+                a diferentes pantallas.</p><br>
         </div>
     </section>
 
@@ -75,7 +79,7 @@
             <h2 class="heading">Tecnologías</h2>
         </div>
         <div id="column">
-            <div class="container scroll-bottom">
+            <div class="container scroll-scale">
                 <h3 class="tech-title">Frontend</h3>
                 <div class="row" id="frontend">
                     <div class="bar">
@@ -92,7 +96,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container scroll-bottom">
+            <div class="container scroll-scale">
                 <h3 class="tech-title">Herramientas</h3>
                 <div class="row" id="tools">
                     <div class="bar">
@@ -200,8 +204,8 @@
     <!-- Contact section -->
 
     <section id="contact">
-        <div class="container-contact">
-            <div class="contactForm scroll-bottom">
+        <div class="container-contact scroll-scale">
+            <div class="contactForm">
                 <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="c57c4239-3505-4f8b-886c-aa93381ae806">
                     <input type="hidden" name="subject" value="📬 Mensaje nuevo desde el portfolio">
