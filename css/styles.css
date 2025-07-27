@@ -454,7 +454,6 @@ h2 {
     overflow: hidden;
     background: #292e33;
     display: flex;
-    grid-template-rows: 1fr auto;
     align-items: center;
     border: 2px solid var(--main-color);
     box-shadow: var(--neon-box-shadow);
@@ -464,8 +463,6 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 100%;
 }
 
 .port-image img {
@@ -528,7 +525,11 @@ h2 {
     color: var(--bg-color);
 }
 
-
+.build-tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
 
 .build-tools span {
     background: var(--bg-color);
@@ -537,6 +538,7 @@ h2 {
     font-size: .8rem;
     padding: .3rem .6rem;
     font-weight: bold;
+    margin: .3rem;
 }
 
 /* Contact section */
