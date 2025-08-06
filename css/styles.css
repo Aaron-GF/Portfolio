@@ -388,10 +388,8 @@ h2 {
 
 .technologies .container .row {
     display: flex;
-    grid-template-columns: repeat(6, 1fr);
     flex-wrap: wrap;
     gap: 1.8rem;
-    width: 100%;
     justify-content: center;
 }
 
@@ -407,8 +405,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 1rem;
+    justify-content: space-evenly;
 }
 
 .technologies .container .bar:hover {
