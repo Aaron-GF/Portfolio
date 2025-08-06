@@ -398,7 +398,6 @@ h2 {
 .technologies .container .bar {
     width: 8rem;
     height: 8rem;
-    padding: 10px;
     border-radius: 15px;
     background: var(--bg-color);
     transition: all .3s ease;
