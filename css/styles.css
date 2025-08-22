@@ -467,6 +467,7 @@ h2 {
     width: 100%;
     opacity: .5s;
     transition: .5s;
+    aspect-ratio: 2;
 }
 
 .port-content {
